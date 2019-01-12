@@ -9,6 +9,6 @@ namespace ImageApi.Strategy
 {
     interface IConvertStrategy
     {
-        void Implement(Image image, string destination);
+        void Implement(System.Drawing.Image image, string destination);
     }
 }

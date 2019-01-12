@@ -9,7 +9,7 @@ namespace ImageApi.Strategy.ImgConverter
 {
     class ConvertToJpeg : IConvertStrategy
     {
-        public void Implement(Image image, string destination)
+        public void Implement(System.Drawing.Image image, string destination)
         {
             try
             {

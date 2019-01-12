@@ -10,13 +10,12 @@ namespace ImageApi.Strategy.ImgResizer
     class ResizeStrategyContext
     {
         IResizeStrategy strategy;
-        //here we use the strategies
         public ResizeStrategyContext(IResizeStrategy strategy)
         {
             this.strategy = strategy;
         }
 
-        public void Resize(Image image, string destination, int destW, int destH)
+        public void Resize(System.Drawing.Image image, string destination, int destW, int destH)
         {
             Bitmap bmp = new Bitmap(image);
             try
@@ -31,7 +30,7 @@ namespace ImageApi.Strategy.ImgResizer
             }
         }
 
-        public void Resize(Image image, string destination, int width, int height, int pointerX, int pointerY)
+        public void Resize(System.Drawing.Image image, string destination, int width, int height, int pointerX, int pointerY)
         {
             Bitmap bmp = new Bitmap(image);
             strategy.Implement(bmp, destination, width, height, pointerX, pointerY);

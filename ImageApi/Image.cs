@@ -12,23 +12,12 @@ using System.Threading.Tasks;
 
 namespace ImageApi
 {
-    public class Class1
+    public class Image
     {
         public void Convert(string source, string destination, string type)
         {
-            //byte[] img_bytes = File.ReadAllBytes(source); //read img file into memory
-            //MemoryStream img_ms = new MemoryStream(img_bytes);
-            //Image img = Image.FromStream(img_ms);
-
-
-            //MemoryStream save_ms = new MemoryStream();
-            //((Bitmap)img).Save(save_ms, ImageFormat.Jpeg);
-            //byte[] resaved_img = save_ms.ToByteArray();
-
-            //create object from source file
-            Image image = Image.FromFile(source);
-
-            //implement context strategy from context using IMG object instead of source...
+            System.Drawing.Image image = System.Drawing.Image.FromFile(source);
+            
             StrategyContext context;
             switch (type.ToLower())
             {
@@ -51,9 +40,8 @@ namespace ImageApi
 
         public void Resize(string source,string destination, string operation, int destW, int destH, int pointerX, int pointerY)
         {
-            Image image = Image.FromFile(source);
-
-            //implement context strategy from context using IMG object instead of source...
+            System.Drawing.Image image = System.Drawing.Image.FromFile(source);
+            
             ResizeStrategyContext context;
             switch (operation.ToLower())
             {
